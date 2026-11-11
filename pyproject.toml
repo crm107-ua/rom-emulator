@@ -1,0 +1,16 @@
+[project]
+name = "rom-manager"
+version = "0.1.0"
+description = "Proyecto principal. reverse-api-engineer vive como submódulo y genera aquí los clientes de cada web."
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "reverse-api-engineer[manual,collector]",
+    "flask>=3.0",
+    "requests>=2.31",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+reverse-api-engineer = { path = "tools/reverse-api-engineer", editable = true }

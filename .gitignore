@@ -1,0 +1,83 @@
+# ── Python ──────────────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.python-version
+
+# ── Cursor / IDE ────────────────────────────────────────────────────────────
+.cursor/
+.vscode/
+*.code-workspace
+
+# ── Logs & runtime scrapes ──────────────────────────────────────────────────
+runs/
+collected/
+rae-run.log
+rae-run.ndjson
+*.log
+
+# ── Boxshelf fork: deps, build, userdata, ROMs, emulators ───────────────────
+tools/boxshelf/node_modules/
+tools/boxshelf/dist/
+tools/boxshelf/data/
+tools/boxshelf/ROMS/
+tools/boxshelf/RetroArch/
+tools/boxshelf/PCSX2/
+tools/boxshelf/DuckStation/
+tools/boxshelf/PPSSPP/
+tools/boxshelf/Dolphin/
+tools/boxshelf/BIOS/
+tools/boxshelf/*.exe
+tools/boxshelf/_wk_*.js
+tools/boxshelf/.git.upstream.bak/
+# keep source; ignore nested upstream git metadata if present
+tools/boxshelf/.git/
+
+# ── Large / personal media ──────────────────────────────────────────────────
+*.iso
+*.chd
+*.rvz
+*.wbfs
+*.ciso
+*.nsp
+*.xci
+*.7z
+# allow small tool archives if ever needed under scripts only
+
+# ── OS junk ─────────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.lnk
+
+# ── Secrets / local dumps ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+sitio.json
+*.pem
+*.key
+
+# ── Optional local Boxshelf install at repo root only ───────────────────────
+/Boxshelf/
+
+# Test/download dumps under scripts (not source)
+scripts/**/downloads/
+scripts/**/downloads_test/
+*.zip
+
+# Optional nested clones
+tools/reverse-api-engineer/
+
+
+# Emulator installs / upstream git bak (do not force-add)
+tools/boxshelf/RetroArch/
+tools/boxshelf/PCSX2/
+tools/boxshelf/.git.upstream.bak/
+tools/boxshelf/android-app/

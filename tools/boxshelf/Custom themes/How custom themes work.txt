@@ -1,0 +1,6 @@
+Each folder here is a theme. Put a picture in it named background (.jpg, .png, .webp or .svg).
+For one console only, add a picture named after its shelf: gc, wii, wiiu, sw, sw2, ps2, ps3, ps4, ps5, psp, x360, n3ds, pc.
+theme.json (optional): {"name": "My theme", "accent": "#6b8cff", "shade": 0.35, "blur": false, "glow": 0.35}
+  shade: how much darker the picture is made (0 to 0.9), so the shelf stays easy to read.
+  blur: true softens the picture.   glow: how bright the light under the shelf is (0 to 1).
+Then in Boxshelf: Settings > Display > Find themes again. Themes are only pictures and settings, never programs.

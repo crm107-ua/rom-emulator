@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Boxshelf's network rules (beta.12, in place of android:usesCleartextTraffic="true" in the manifest).
+
+  Plain http:// stays allowed, on purpose. A RomM server is usually on the home network and served over plain http, at
+  an address like http://192.168.1.20:8080, http://10.0.0.5, http://nas.local or http://localhost, and Android's
+  network security config can only name exact hosts and domains: it has no way to say "any private IP address"
+  (192.168.*, 10.*, 172.16-31.*), so limiting http to the home network here would break RomM on most setups.
+
+  What keeps this safe instead (BoxshelfNativePlugin):
+  - the pages themselves are https only (https://localhost, mixed content blocked), so http is only ever used by the
+    native side's own requests;
+  - an https request never follows a redirect down to http, and a key or sign-in is sent only to the host it belongs
+    to (RomM's token only to the server it was paired with: keys.rommTokenServer);
+  - certificates are checked against the system's trusted authorities only (no user-added ones).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
